@@ -7,8 +7,46 @@ spring:
       server:
         git:
           uri: git@github.com:mibackend/quiz-pro-react_config-service.git
-#          private-key: /root/.ssh/id_rsa
-          private-key: C:/Users/10457/.ssh/id_rsa
+          #          private-key: /root/.ssh/id_rsa
+          private-key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            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
+            -----END OPENSSH PRIVATE KEY-----
           clone-on-start: true
           default-label: master
           search-paths: config  #配置文件所在根目录
