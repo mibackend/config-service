@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-service
+  template:
+    metadata:
+      labels:
+        app: config-service
+    spec:
+      containers:
+        - name: config-service
+          image: registry.cn-guangzhou.aliyuncs.com/acr-test-01/config-service:0.0.2
+          ports:
+            - containerPort: 8888
+          volumeMounts:
+            - name: ssh-key-volume
+              mountPath: /root/.ssh
+              readOnly: true
+          env:
+            - name: DISCOVERY_SERVICE_URL
+              value: http://discovery-service:8761/eureka/
+      volumes:
+        - name: ssh-key-volume
+          secret:
+            secretName: ssh-key-secret
+      imagePullSecrets:
+        - name: acr-secret
