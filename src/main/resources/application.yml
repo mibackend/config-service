@@ -8,7 +8,7 @@ spring:
         git:
           uri: git@github.com:mibackend/quiz-pro-react_config-service.git
 #          private-key: /root/.ssh/id_rsa
-          private-key: C:\Users\10457\.ssh\id_rsa
+          private-key: C:/Users/10457/.ssh/id_rsa
           clone-on-start: true
           default-label: master
           search-paths: config  #配置文件所在根目录
